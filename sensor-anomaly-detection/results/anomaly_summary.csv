@@ -1,0 +1,11 @@
+metric,value
+total_samples,307756.0
+anomalies_total,17549.0
+anomaly_rate_pct,5.702
+iso_anomalies,3078.0
+rule_alt_fault,17099.0
+rule_alt_envelope,202.0
+rule_vspeed,1.0
+rule_hspeed,80.0
+rule_batt_jump,139.0
+rule_sensor_dropout,0.0
