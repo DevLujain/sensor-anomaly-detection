@@ -77,11 +77,24 @@ src/
   load.py       # wide multi-drone CSV -> tidy long-form time series
   features.py   # speed, vertical rate, battery rate, sample-gap features
   detect.py     # rule-based + Isolation Forest detectors, combined
+  explain.py    # SHAP (TreeSHAP) explanations of the Isolation Forest: global, beeswarm, local
   run.py        # end-to-end pipeline: load -> features -> detect -> report/plots
 data/
   stage16_telemetry/   # telemetry CSVs (place your files here)
 results/               # summaries, flagged samples, timeline plots
 requirements.txt
+```
+
+## Explainability
+
+After detection, `explain.py` uses SHAP (TreeSHAP) to explain *why* the
+Isolation Forest scores samples as it does — global feature importance, a
+beeswarm view, and a single-sample local breakdown. See
+[`EXPLAINABILITY.md`](EXPLAINABILITY.md) for the findings and an important note
+on the score sign convention.
+
+```bash
+python -m src.explain --data data/stage16_telemetry --out results
 ```
 
 ## Notes
